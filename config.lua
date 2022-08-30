@@ -1,5 +1,10 @@
 Config = {}
 
+Config.CrayfishPrice = 25 -- sell price per crayfish
+Config.CrabPrice = 50 -- sell price per crab
+Config.LobsterPrice = 100 -- sell price per lobster
+Config.RebaitPrice = 10 -- cost associated with rebaiting each pot
+
 Config.FishingZone = { -- fishing zones
     [1] = {
         zones = { -- bronzezone

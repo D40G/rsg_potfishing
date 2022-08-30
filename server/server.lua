@@ -176,18 +176,14 @@ AddEventHandler("rsg_potfishing:server:sellCatch", function()
         for k, v in pairs(Player.PlayerData.items) do 
             if Player.PlayerData.items[k] ~= nil then 
                 if Player.PlayerData.items[k].name == "crab" then 
-                    price = price + 50 * Player.PlayerData.items[k].amount
+                    price = price + Config.CrabPrice * Player.PlayerData.items[k].amount
                     Player.Functions.RemoveItem("crab", Player.PlayerData.items[k].amount, k)
 				elseif Player.PlayerData.items[k].name == "lobster" then 
-                    price = price + 100 * Player.PlayerData.items[k].amount
+                    price = price + Config.LobsterPrice * Player.PlayerData.items[k].amount
 					Player.Functions.RemoveItem("lobster", Player.PlayerData.items[k].amount, k)
 				elseif Player.PlayerData.items[k].name == "crayfish" then 
-                    price = price + 25 * Player.PlayerData.items[k].amount
+                    price = price + Config.CrayfishPrice * Player.PlayerData.items[k].amount
 					Player.Functions.RemoveItem("crayfish", Player.PlayerData.items[k].amount, k)
-				elseif Player.PlayerData.items[k].name == "fishingrod" then 
-                    price = price + 70 * Player.PlayerData.items[k].amount
-					Player.Functions.RemoveItem("fishingrod", Player.PlayerData.items[k].amount, k)
-					TriggerClientEvent('QBCore:Notify', src, 'removed and refunded you for your fishing rod.. no longer required', 'success')
                 end
             end
         end
@@ -202,7 +198,7 @@ AddEventHandler("rsg_potfishing:server:rebaitpots", function()
 	local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 	local amountpots = Player.Functions.GetItemByName('fishingpot').amount
-	local rebaitprice = 10
+	local rebaitprice = Config.RebaitPrice
 	if amountpots > 0 then
 		local totalprice = amountpots * rebaitprice
 		local cashBalance = Player.PlayerData.money["cash"]
