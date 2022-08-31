@@ -4,3 +4,5 @@
 	['crab'] 						= {['name'] = 'crab', 							['label'] = 'Crab', 					['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'crab.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil, 	['description'] = 'fresh from the sea'},
 	['lobster'] 					= {['name'] = 'lobster', 						['label'] = 'Lobster', 					['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'lobster.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil, 	['description'] = 'fresh from the sea'},
 	['crayfish'] 					= {['name'] = 'crayfish', 						['label'] = 'Crayfish', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'crayfish.png', 		['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil, 	['description'] = 'fresh from the swamp'},
+	['boatanchor'] 					= {['name'] = 'boatanchor', 					['label'] = 'Boat Anchor', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'boatanchor.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil, 	['description'] = 'anchor your boat'},
+

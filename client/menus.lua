@@ -10,24 +10,24 @@ Citizen.CreateThread(function()
 		maxZ=6.01,
 	}, {
 		options = {
-		    {
-				type = "server",
-				event = "rsg_potfishing:server:sellCatch",
+			{  
+				type = "client",
+				event = "rsg_potfishing:client:buypots",
 				icon = "fas fa-fish",
-				label = "Sell Catch",
-		    },
+				label = "Fishing Equipment",
+			},
 		    {
 				type = "server",
 				event = "rsg_potfishing:server:rebaitpots",
 				icon = "fas fa-fish",
 				label = "Rebait Fishing Pots",
 		    },
-			{  
-				type = "client",
-				event = "rsg_potfishing:client:buypots",
+		    {
+				type = "server",
+				event = "rsg_potfishing:server:sellCatch",
 				icon = "fas fa-fish",
-				label = "Buy Fishing Pots",
-			},
+				label = "Sell Catch",
+		    },
 		},
 		distance = 2.5
 	})
@@ -44,7 +44,6 @@ AddEventHandler('rsg_potfishing:client:buypots', function()
 	TriggerServerEvent("inventory:server:OpenInventory", "shop", "FishingVendor_"..math.random(1, 99), ShopItems)
 end)
 
--- map blip
 Citizen.CreateThread(function()
     fishvendor = AddBlipForCoord(-753.4568, -1512.305, 5.0197486)
     SetBlipSprite (fishvendor, 374)

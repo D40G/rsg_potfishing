@@ -124,4 +124,22 @@ Config.FishingVendor = {
 		slot = 1,
 	},
 	
+	[2] = {
+		name = 'boatanchor',
+		price = 500,
+		amount = 500,
+		info = {},
+		type = 'item',
+		slot = 2,
+	},
+	
+	[3] = {
+		name = 'jerry_can',
+		price = 10,
+		amount = 500,
+		info = {},
+		type = 'item',
+		slot = 3,
+	},
+	
 }

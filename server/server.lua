@@ -6,6 +6,18 @@ QBCore.Functions.CreateUseableItem("fishingpotbaited", function(source, item)
 	TriggerClientEvent("rsg_potfishing:client:startfishing", src)
 end)
 
+QBCore.Functions.CreateUseableItem("boatanchor", function(source, item)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+	TriggerClientEvent("rsg_potfishing:client:useanchor", src)
+end)
+
+QBCore.Functions.CreateUseableItem("jerry_can", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
+    TriggerClientEvent("rsg_potfishing:client:UseJerrycan", source, item.name)
+end)
+
 -- bronzezone reward
 RegisterServerEvent('rsg_potfishing:server:bronzezoneReward')
 AddEventHandler('rsg_potfishing:server:bronzezoneReward', function()
