@@ -187,8 +187,12 @@ AddEventHandler("rsg_potfishing:server:sellCatch", function()
                 end
             end
         end
-        Player.Functions.AddMoney("cash", price, "sold-catch")
-		TriggerClientEvent('QBCore:Notify', src, 'Thank you, items sold for $'..price, 'success')
+		if price > 0 then
+			Player.Functions.AddMoney("cash", price, "sold-catch")
+			TriggerClientEvent('QBCore:Notify', src, 'Thank you, catch sold for $'..price, 'success')
+		else
+			TriggerClientEvent('QBCore:Notify', src, 'You have nothing to sell to me!', 'error')
+		end
 	end
 end)
 
