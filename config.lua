@@ -4,6 +4,11 @@ Config.CrayfishPrice = 25 -- sell price per crayfish
 Config.CrabPrice = 50 -- sell price per crab
 Config.LobsterPrice = 100 -- sell price per lobster
 Config.RebaitPrice = 10 -- cost associated with rebaiting each pot
+Config.BronzePotTime = 30000 -- time to check bronze pots in milliseconds (30000 = 30 seconds)
+Config.SilverPotTime = 30000 -- time to check silver pots in milliseconds (30000 = 30 seconds)
+Config.GoldPotTime = 30000 -- time to check gold pots in milliseconds (30000 = 30 seconds)
+Config.CrayPotTime = 30000 -- time to check cray pots milliseconds (30000 = 30 seconds)
+Config.RefuellBoatTime = 20000 -- time to refuel boat in milliseconds (20000 = 20 seconds)
 
 Config.FishingZone = { -- fishing zones
     [1] = {

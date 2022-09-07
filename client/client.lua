@@ -37,7 +37,7 @@ AddEventHandler("rsg_potfishing:client:startfishing", function(itemName)
 		if inFishingZone == true and zonename == "bronzezone" then
 			local hasItem = QBCore.Functions.HasItem("fishingpotbaited")
 			if hasItem then
-				QBCore.Functions.Progressbar("start-fishing", "Checking Fishing Pot..", 60000, false, true, {
+				QBCore.Functions.Progressbar("start-fishing", "Checking Fishing Pot..", Config.BronzePotTime, false, true, {
 					disableMovement = false,
 					disableCarMovement = false,
 					disableMouse = false,
@@ -54,7 +54,7 @@ AddEventHandler("rsg_potfishing:client:startfishing", function(itemName)
 		elseif inFishingZone == true and zonename == "silverzone" then
 			local hasItem = QBCore.Functions.HasItem("fishingpotbaited")
 			if hasItem then
-				QBCore.Functions.Progressbar("start-fishing", "Checking Fishing Pot..", 60000, false, true, {
+				QBCore.Functions.Progressbar("start-fishing", "Checking Fishing Pot..", Config.SilverPotTime, false, true, {
 					disableMovement = false,
 					disableCarMovement = false,
 					disableMouse = false,
@@ -71,7 +71,7 @@ AddEventHandler("rsg_potfishing:client:startfishing", function(itemName)
 		elseif inFishingZone == true and zonename == "goldzone" then
 			local hasItem = QBCore.Functions.HasItem("fishingpotbaited")
 			if hasItem then
-				QBCore.Functions.Progressbar("start-fishing", "Checking Fishing Pot..", 60000, false, true, {
+				QBCore.Functions.Progressbar("start-fishing", "Checking Fishing Pot..", Config.GoldPotTime, false, true, {
 					disableMovement = false,
 					disableCarMovement = false,
 					disableMouse = false,
@@ -88,7 +88,7 @@ AddEventHandler("rsg_potfishing:client:startfishing", function(itemName)
 		elseif inFishingZone == true and zonename == "crayfishzone" then
 			local hasItem = QBCore.Functions.HasItem("fishingpotbaited")
 			if hasItem then
-				QBCore.Functions.Progressbar("start-fishing", "Checking Fishing Pot..", 60000, false, true, {
+				QBCore.Functions.Progressbar("start-fishing", "Checking Fishing Pot..", Config.CrayPotTime, false, true, {
 					disableMovement = false,
 					disableCarMovement = false,
 					disableMouse = false,
@@ -167,7 +167,7 @@ AddEventHandler('rsg_potfishing:client:UseJerrycan', function()
     if boat then
         local curVeh = GetVehiclePedIsIn(ped, false)
         if GetVehicleFuelLevel(curVeh) < 95 then
-            QBCore.Functions.Progressbar("reful_boat", "Refueling boat ..", 20000, false, true, {
+            QBCore.Functions.Progressbar("refuel_boat", "Refueling boat ..", Config.RefuellBoatTime, false, true, {
                 disableMovement = true,
                 disableCarMovement = true,
                 disableMouse = false,
@@ -186,7 +186,7 @@ AddEventHandler('rsg_potfishing:client:UseJerrycan', function()
     elseif DoesEntityExist(vehicle) and #(GetEntityCoords(ped) - vehicleCoords) < 2.5 then
         if not DoesEntityExist(GetPedInVehicleSeat(vehicle, -1)) then
             if GetVehicleFuelLevel(vehicle) < 95 then
-                QBCore.Functions.Progressbar("reful_boat", "Refueling vehicle ..", 20000, false, true, {
+                QBCore.Functions.Progressbar("refuel_boat", "Refueling vehicle ..", Config.RefuellBoatTime, false, true, {
                     disableMovement = true,
                     disableCarMovement = true,
                     disableMouse = false,
