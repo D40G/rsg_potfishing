@@ -17,9 +17,19 @@ CreateThread(function()
 			if isPointInside then
 				inFishingZone = true
 				zonename = Zones[k].name
-				QBCore.Functions.Notify('you have entered a legal fishing zone', "success")
+				if zonename == "bronzezone" then
+					exports['qb-core']:DrawText('Bronze Fishing Zone','left')
+				elseif zonename == "silverzone" then
+					exports['qb-core']:DrawText('Silver Fishing Zone','left')
+				elseif zonename == "goldzone" then
+					exports['qb-core']:DrawText('Gold Fishing Zone','left')
+				elseif zonename == "crayfishzone" then
+					exports['qb-core']:DrawText('Cray Fishing Zone','left')
+				end
+				--QBCore.Functions.Notify('you have entered a legal fishing zone', "success")
 			else
 				inFishingZone = false
+				exports['qb-core']:HideText()
 			end
 		end)
     end
